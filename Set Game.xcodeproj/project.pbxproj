@@ -13,6 +13,9 @@
 		0A67067125A7853600DC8DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A67067025A7853600DC8DC8 /* Preview Assets.xcassets */; };
 		0A67067A25A7862E00DC8DC8 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67067925A7862E00DC8DC8 /* SetGame.swift */; };
 		0A67067E25A7889B00DC8DC8 /* SoloSetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67067D25A7889B00DC8DC8 /* SoloSetGame.swift */; };
+		0A67068325A8B1D800DC8DC8 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67068225A8B1D800DC8DC8 /* Grid.swift */; };
+		0A67068625A8B1DE00DC8DC8 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67068525A8B1DE00DC8DC8 /* GridLayout.swift */; };
+		0A67068925A8B1F300DC8DC8 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67068825A8B1F300DC8DC8 /* Array+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		0A67067225A7853600DC8DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A67067925A7862E00DC8DC8 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		0A67067D25A7889B00DC8DC8 /* SoloSetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloSetGame.swift; sourceTree = "<group>"; };
+		0A67068225A8B1D800DC8DC8 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		0A67068525A8B1DE00DC8DC8 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		0A67068825A8B1F300DC8DC8 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				0A67066B25A7853600DC8DC8 /* SoloSetGameView.swift */,
 				0A67067D25A7889B00DC8DC8 /* SoloSetGame.swift */,
 				0A67067925A7862E00DC8DC8 /* SetGame.swift */,
+				0A67068225A8B1D800DC8DC8 /* Grid.swift */,
+				0A67068525A8B1DE00DC8DC8 /* GridLayout.swift */,
+				0A67068825A8B1F300DC8DC8 /* Array+Identifiable.swift */,
 				0A67066D25A7853600DC8DC8 /* Assets.xcassets */,
 				0A67067225A7853600DC8DC8 /* Info.plist */,
 				0A67066F25A7853600DC8DC8 /* Preview Content */,
@@ -147,6 +156,9 @@
 				0A67066C25A7853600DC8DC8 /* SoloSetGameView.swift in Sources */,
 				0A67067A25A7862E00DC8DC8 /* SetGame.swift in Sources */,
 				0A67066A25A7853600DC8DC8 /* Set_GameApp.swift in Sources */,
+				0A67068625A8B1DE00DC8DC8 /* GridLayout.swift in Sources */,
+				0A67068325A8B1D800DC8DC8 /* Grid.swift in Sources */,
+				0A67068925A8B1F300DC8DC8 /* Array+Identifiable.swift in Sources */,
 				0A67067E25A7889B00DC8DC8 /* SoloSetGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

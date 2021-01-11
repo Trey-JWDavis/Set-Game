@@ -18,7 +18,18 @@ class SoloSetGame: ObservableObject {
         SetGame()
     }
     
-    // MARK: - Access to the model
-    var cards: Array<SetGame.Card> { setGame.cards }
+    func createNewGame() {
+        setGame = SoloSetGame.createSetGame()
+    }
     
+    // MARK: - Access to the model
+    var visibleCards: Array<SetGame.Card> { setGame.visibleCards }
+    
+    var score: Int { setGame.score }
+    
+    
+    // MARK: - Intents
+    func addCards() { setGame.addCards() }
+    
+    func choose(card: SetGame.Card) { setGame.choose(card: card) }
 }
