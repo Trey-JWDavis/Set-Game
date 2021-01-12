@@ -38,27 +38,70 @@ struct CardView: View {
     
     var body: some View {
         if card.isSelected {
-//            ZStack {
-//                RoundedRectangle(cornerRadius: 10).fill(Color.orange)
-//                RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 3)
-//                VStack {
-//                    Text("\(card.numberOfShapes)")
-//                    Text(card.color)
-//                    Text(card.shape)
-//                    Text("\(card.shading)")
-//                }
-//                .shadow(radius: 5)
-//            }
-        } else {
             ZStack {
                 RoundedRectangle(cornerRadius: 10).fill(Color.orange)
                 RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 3)
                 VStack {
-                    Text("\(card.numberOfShapes)")
-                    Text(card.color)
-                    Text(card.shape)
-                    Text("\(card.shading)")
+                    ForEach(0..<card.numberOfShapes) { _ in
+                        if card.shape == "diamond" {
+                            ZStack {
+                                Diamond()
+                                    .opacity(card.shading)
+                                Diamond()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        } else if card.shape == "rectangle" {
+                            ZStack {
+                                Rectangle()
+                                    .opacity(card.shading)
+                                Rectangle()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        } else {
+                            ZStack {
+                                Capsule()
+                                    .opacity(card.shading)
+                                Capsule()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        }
+                    }
                 }
+                    .padding()
+                    .foregroundColor(card.color)
+            }
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(Color.yellow)
+                RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 3)
+                VStack {
+                    ForEach(0..<card.numberOfShapes) { _ in
+                        if card.shape == "diamond" {
+                            ZStack {
+                                Diamond()
+                                    .opacity(card.shading)
+                                Diamond()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        } else if card.shape == "rectangle" {
+                            ZStack {
+                                Rectangle()
+                                    .opacity(card.shading)
+                                Rectangle()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        } else {
+                            ZStack {
+                                Capsule()
+                                    .opacity(card.shading)
+                                Capsule()
+                                    .stroke(lineWidth: 3)
+                            }.padding(3)
+                        }
+                    }
+                }
+                    .padding()
+                    .foregroundColor(card.color)
             }
         }
     }

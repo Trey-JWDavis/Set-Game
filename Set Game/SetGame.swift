@@ -5,7 +5,7 @@
 //  Created by Trey Davis on 1/7/21.
 //
 
-import Foundation
+import SwiftUI
 
 struct SetGame {
     var cards: Array<Card>
@@ -15,7 +15,7 @@ struct SetGame {
     
     let shapeList = ["diamond", "rectangle", "capsule"]
     let shadingList = [0.0, 0.5, 1]
-    let colorList = ["red", "green", "blue"]
+    let colorList = [Color.red, Color.green, Color.blue]
     var nextCardIndex: Int
     
     init() {
@@ -104,8 +104,8 @@ struct SetGame {
             isUnique(firstCard.numberOfShapes, secondCard.numberOfShapes, thirdCard.numberOfShapes) {
             print("Numbers meet requirements")
             
-            if isEqual(firstCard.color, secondCard.color, thirdCard.color) ||
-                isUnique(firstCard.color, secondCard.color, thirdCard.color) {
+            if isEqual(firstCard.color.description, secondCard.color.description, thirdCard.color.description) ||
+                isUnique(firstCard.color.description, secondCard.color.description, thirdCard.color.description) {
                 print("Colors meet requirements")
                 
                 if isEqual(firstCard.shading, secondCard.shading, thirdCard.shading) ||
@@ -152,7 +152,7 @@ struct SetGame {
         var numberOfShapes: Int
         var shape: String
         var shading: Double
-        var color: String
+        var color: Color
         var id: Int
         var isSelected: Bool = false
     }
