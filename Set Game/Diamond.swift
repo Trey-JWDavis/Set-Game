@@ -17,8 +17,10 @@ struct Diamond: Shape {
         
         var p = Path()
         p.move(to: top)
-        p.addLines([left, bottom, right, top, left])
-        
+        p.addLine(to: right)
+        p.addLine(to: bottom)
+        p.addLine(to: left)
+        p.addLine(to: top)
         return p
     }
 }

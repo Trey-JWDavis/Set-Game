@@ -14,7 +14,7 @@ struct SetGame {
     var score = 0
     
     let shapeList = ["diamond", "rectangle", "capsule"]
-    let shadingList = [0.0, 0.5, 1]
+    let shadingList = [0.0, 0.35, 1]
     let colorList = [Color.red, Color.green, Color.blue]
     var nextCardIndex: Int
     
@@ -47,6 +47,7 @@ struct SetGame {
     mutating func choose(card: Card) {
         if let chosenIndex = visibleCards.firstIndex(matching: card) {
             if let selectedCardsIndex = selectedCards.firstIndex(matching: visibleCards[chosenIndex]) {
+                visibleCards[chosenIndex].isSelected.toggle()
                 selectedCards.remove(at: selectedCardsIndex)
             } else {
                 visibleCards[chosenIndex].isSelected.toggle()
@@ -57,8 +58,10 @@ struct SetGame {
                         print("Set made!")
                         remove(set: selectedCards)
                         print("Set removed from Screen.")
-                        if visibleCards.count < 12 { addCards() }
-                        print("Added cards to maintain 12 on the screen")
+                        if visibleCards.count < 12 {
+                            addCards()
+                            print("Added cards to maintain 12 on the screen")
+                        }
                         score += 1
                         print("Score++")
                     } else {
