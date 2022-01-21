@@ -12,11 +12,11 @@ struct SetGame {
     var visibleCards: Array<Card>
     var selectedCards: [Card]
     var score = 0
+    var nextCardIndex: Int
     
     let shapeList = ["diamond", "rectangle", "capsule"]
     let shadingList = [0.0, 0.35, 1]
     let colorList = [Color.red, Color.green, Color.blue]
-    var nextCardIndex: Int
     
     init() {
         cards = Array<Card>()
@@ -37,7 +37,9 @@ struct SetGame {
             }
         }
         cards.shuffle()
-        
+    }
+    
+    mutating func dealStartingCards() {
         for i in 0 ..< 12 {
             visibleCards.append(cards[i])
             nextCardIndex += 1
@@ -65,7 +67,6 @@ struct SetGame {
                         score += 1
                         print("Score++")
                     } else {
-                        print("Not a set, score reduced by 1, selectedCards reset")
                         if score > 0 { score -= 1 }
                         for index in 0..<selectedCards.count {
                             if let visibleCardIndex = visibleCards.firstIndex(matching: selectedCards[index]) {
@@ -73,6 +74,7 @@ struct SetGame {
                             }
                         }
                         selectedCards = []
+                        print("Not a set, score reduced by 1, selectedCards reset")
                     }
                 }
             }
@@ -81,7 +83,7 @@ struct SetGame {
         }
     }
     
-    // TODO: Remove Set from the visible cards
+    // Remove Set from the visible cards
     mutating func remove(set cards: Array<Card>) {
         for index in 0..<cards.count {
             visibleCards.remove(at: visibleCards.firstIndex(matching: cards[index])!)
@@ -93,8 +95,8 @@ struct SetGame {
     mutating func addCards() {
         for i in 0 ..< 3 {
             visibleCards.append(cards[nextCardIndex + i])
+            nextCardIndex += 1
         }
-        nextCardIndex += 3
     }
     
     func isSet(_ cards: Array<Card>) -> Bool {

@@ -10,19 +10,14 @@ import SwiftUI
 class SoloSetGame: ObservableObject {
     @Published var setGame: SetGame
     
-    init() {
-        setGame = SoloSetGame.createSetGame()
-    }
+    init() { setGame = SoloSetGame.createSetGame() }
     
-    static func createSetGame() -> SetGame {
-        SetGame()
-    }
+    static func createSetGame() -> SetGame { SetGame() }
     
-    func createNewGame() {
-        setGame = SoloSetGame.createSetGame()
-    }
+    func createNewGame() { setGame = SoloSetGame.createSetGame() }
     
-    // MARK: - Access to the model
+    
+    // MARK: - Access
     var visibleCards: Array<SetGame.Card> { setGame.visibleCards }
     
     var score: Int { setGame.score }
@@ -32,4 +27,6 @@ class SoloSetGame: ObservableObject {
     func addCards() { setGame.addCards() }
     
     func choose(card: SetGame.Card) { setGame.choose(card: card) }
+    
+    func dealStartingCards() { setGame.dealStartingCards() }
 }
